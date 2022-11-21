@@ -1,6 +1,8 @@
 <script>
   import Field from './components/Field.svelte'
   import { CoreTextField } from '@budibase/bbui'
+  import mapValueType from './utils/mapValueType'
+  import revertValueType from './utils/revertValueType'
 
   export let label
   export let field
@@ -10,50 +12,27 @@
   export let onChange
   export let type = 'text'
   export let align
-
-  export let stringValidation
-  export let numberValidation
-  export let booleanValidation
-  export let arrayValidation
-  export let datetimeValidation
-  export let linkValidation
+  export let validation
 
   let fieldState
   let fieldApi
 
   const handleChange = e => {
-    const dataChanged = fieldApi.setValue(e.detail)
+    let value = mapValueType(e.detail)
+
+    const dataChanged = fieldApi.setValue(value)
 
     if (onChange && dataChanged) {
-      onChange({ value: e.detail })
+      onChange({ value })
     }
   }
-
-  const validationMapper = {
-    text: stringValidation,
-    number: numberValidation,
-    boolean: booleanValidation,
-    array: arrayValidation,
-    json: [
-      {
-        constraint: 'json',
-        type: 'json',
-        error: 'JSON syntax is invalid',
-      },
-    ],
-    datetime: datetimeValidation,
-    link: linkValidation,
-    longform: stringValidation,
-  }
-
-  const validation = validationMapper[type]
 </script>
 
 <Field
   {label}
   {field}
   {disabled}
-  {defaultValue}
+  defaultValue={defaultValue ? mapValueType(defaultValue, type) : defaultValue}
   {type}
   {validation}
   bind:fieldState
@@ -62,7 +41,7 @@
   {#if fieldState}
     <CoreTextField
       updateOnChange={false}
-      value={fieldState.value}
+      value={revertValueType(fieldState.value, type)}
       on:change={handleChange}
       disabled={fieldState.disabled}
       error={fieldState.error}

@@ -1,4 +1,4 @@
-placeholder<script>
+<script>
   import { getContext } from 'svelte'
 
   const { builderStore } = getContext('sdk')
