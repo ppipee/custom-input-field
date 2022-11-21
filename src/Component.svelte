@@ -3,6 +3,7 @@
 
   import Field from './components/Field.svelte'
   import mapValueType from './utils/mapValueType'
+  import getDefaultValue from './utils/getDefaultValue'
 
   export let label
   export let field
@@ -37,7 +38,7 @@
   {label}
   {field}
   {disabled}
-  defaultValue={defaultValue ? mapValueType(defaultValue, type) : defaultValue}
+  defaultValue={getDefaultValue(defaultValue, type)}
   {type}
   {validation}
   bind:fieldState

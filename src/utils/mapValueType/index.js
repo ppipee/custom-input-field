@@ -2,6 +2,10 @@ import isObject from 'lodash/isObject'
 import isEmpty from 'lodash/isEmpty'
 
 export default function mapValueType(value, type) {
+  if (isEmpty(value)) {
+    return value
+  }
+
   switch (type) {
     case 'number':
       return Number(value)
@@ -10,19 +14,7 @@ export default function mapValueType(value, type) {
     case 'json':
     case 'array':
       try {
-        let defaultValue = value
-
-        if (isEmpty(value)) {
-          if (type === 'json') {
-            defaultValue = {}
-          } else if (type === 'array') {
-            defaultValue = []
-          }
-        }
-
-        const dataObject = isObject(defaultValue)
-          ? JSON.stringify(defaultValue)
-          : defaultValue
+        const dataObject = isObject(value) ? JSON.stringify(value) : value
         const stringObject = isString(dataObject)
           ? JSON.parse(dataObject)
           : dataObject
