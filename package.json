@@ -1,7 +1,7 @@
 {
   "name": "custom-input-field",
   "version": "1.0.0",
-  "description": "An amazing Budibase component!",
+  "description": "the custom input field, which allows you to select any data type you want.",
   "license": "MIT",
   "svelte": "index.js",
   "module": "dist/plugin.min.js",

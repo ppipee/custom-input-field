@@ -4,7 +4,7 @@
   "schema": {
     "name": "custom-input-field",
     "friendlyName": "Custom Input Field",
-    "description": "An amazing Budibase component!",
+    "description": "the custom input field, which allows you to select any data type you want.",
     "icon": "Text",
     "settings": [
       {

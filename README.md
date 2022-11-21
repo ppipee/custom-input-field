@@ -4,7 +4,9 @@ This is a readme for your new Budibase plugin.
 
 # Description
 
-An amazing Budibase component!
+The custom input field, which allows you to select any data type you want.
+
+**this component using dynamic field, so suggest field will not show.**
 
 Find out more about [Budibase](https://github.com/Budibase/budibase).
 
