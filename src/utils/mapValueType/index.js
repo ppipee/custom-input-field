@@ -13,20 +13,9 @@ export default function mapValueType(value, type) {
       return Boolean(value)
     case 'json':
     case 'array':
-      console.log('🔥 ~ value', value)
-      try {
-        const dataObject = isObject(value) ? JSON.stringify(value) : value
-        console.log('🔥 ~ dataObject', dataObject)
-        const stringObject = isString(dataObject)
-          ? JSON.parse(dataObject)
-          : dataObject
-        console.log('🔥 ~ stringObject', stringObject)
+      const dataObject = JSON.stringify({ data: value })
 
-        return stringObject
-      } catch {
-        console.log('🔥 ~ catch')
-        return value
-      }
+      return JSON.parse(dataObject).data
     case 'datetime':
       return new Date(value)
     default:
