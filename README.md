@@ -1,4 +1,4 @@
-# Custom Input Fieldg
+# Custom Input Field
 
 This is a readme for your new Budibase plugin.
 
