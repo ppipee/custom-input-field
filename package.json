@@ -12,6 +12,7 @@
   "dependencies": {
     "@budibase/bbui": "2.1.29",
     "@crownframework/svelte-error-boundary": "^1.0.3",
+    "lodash": "4.17.21",
     "svelte": "^3.49.0"
   },
   "devDependencies": {

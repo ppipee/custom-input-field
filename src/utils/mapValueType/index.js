@@ -1,3 +1,5 @@
+import isObject from 'lodash/isObject'
+
 export default function mapValueType(value, type) {
   switch (type) {
     case 'number':
@@ -6,7 +8,9 @@ export default function mapValueType(value, type) {
       return Boolean(value)
     case 'json':
     case 'array':
-      return JSON.parse(JSON.stringify(value))
+      const stringObject = isObject(value) ? JSON.stringify(value) : value
+
+      return JSON.parse(stringObject)
     case 'datetime':
       return new Date(value)
     default:
