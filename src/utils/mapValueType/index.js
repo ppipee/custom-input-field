@@ -1,4 +1,5 @@
 import isObject from 'lodash/isObject'
+import isString from 'lodash/isString'
 import isEmpty from 'lodash/isEmpty'
 
 export default function mapValueType(value, type) {
@@ -13,9 +14,14 @@ export default function mapValueType(value, type) {
       return Boolean(value)
     case 'json':
     case 'array':
-      const dataObject = JSON.stringify({ data: value })
+      const dataObject = isObject(value)
+        ? JSON.stringify({ data: value })
+        : value
+      const stringObject = isString(dataObject)
+        ? JSON.parse(dataObject)
+        : dataObject
 
-      return JSON.parse(dataObject).data
+      return stringObject
     case 'datetime':
       return new Date(value)
     default:
