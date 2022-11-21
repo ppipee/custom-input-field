@@ -1,0 +1,93 @@
+{
+  "type": "component",
+  "metadata": {},
+  "schema": {
+    "name": "custom-input-field",
+    "friendlyName": "Custom Input Field",
+    "description": "An amazing Budibase component!",
+    "icon": "Text",
+    "settings": [
+      {
+        "type": "text",
+        "key": "field",
+        "label": "Field"
+      },
+      {
+        "type": "text",
+        "key": "label",
+        "label": "Label"
+      },
+      {
+        "type": "text",
+        "key": "placeholder",
+        "label": "Placeholder"
+      },
+      {
+        "type": "text",
+        "key": "defaultValue",
+        "label": "Default Value"
+      },
+      {
+        "type": "select",
+        "key": "type",
+        "label": "type",
+        "options": [
+          "text",
+          "number",
+          "boolean",
+          "array",
+          "json",
+          "datetime",
+          "link",
+          "longform"
+        ]
+      },
+      {
+        "type": "boolean",
+        "key": "disabled",
+        "label": "disabled"
+      },
+      {
+        "type": "event",
+        "key": "onChange",
+        "label": "Field"
+      },
+      {
+        "type": "select",
+        "key": "align",
+        "label": "align",
+        "options": ["left", "center", "right"]
+      },
+      {
+        "type": "validation/string",
+        "key": "stringValidation",
+        "label": "String Validation"
+      },
+      {
+        "type": "validation/number",
+        "key": "numberValidation",
+        "label": "Number Validation"
+      },
+      {
+        "type": "validation/boolean",
+        "key": "booleanValidation",
+        "label": "Boolean Validation"
+      },
+      {
+        "type": "validation/array",
+        "key": "arrayValidation",
+        "label": "Array Validation"
+      },
+      {
+        "type": "validation/datetime",
+        "key": "datetimeValidation",
+        "label": "Datetime Validation"
+      },
+      {
+        "type": "validation/link",
+        "key": "linkValidation",
+        "label": "Link Validation"
+      }
+    ]
+  }
+}
