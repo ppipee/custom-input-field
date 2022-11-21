@@ -18,7 +18,7 @@
   let fieldApi
 
   const handleChange = e => {
-    let value = mapValueType(e.detail)
+    let value = mapValueType(e.detail, type)
 
     const dataChanged = fieldApi.setValue(value)
 
