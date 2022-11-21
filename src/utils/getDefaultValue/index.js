@@ -1,4 +1,3 @@
-import isObject from 'lodash/isObject'
 import isEmpty from 'lodash/isEmpty'
 import mapValueType from '../revertValue'
 
@@ -9,9 +8,9 @@ export default function getDefaultValue(defaultValue, type) {
 
   switch (type) {
     case 'json':
-      return {}
+      return '{}'
     case 'array':
-      return []
+      return '[]'
     default:
       return ''
   }
