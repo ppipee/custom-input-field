@@ -17,6 +17,11 @@
   let fieldState
   let fieldApi
 
+  const fieldValue =
+    type === 'array' && fieldState?.value
+      ? JSON.stringify(fieldState?.value)
+      : fieldState?.value
+
   const handleChange = e => {
     let value = mapValueType(e.detail, type)
 
@@ -41,7 +46,7 @@
   {#if fieldState}
     <CoreTextField
       updateOnChange={false}
-      value={fieldState.value}
+      value={fieldValue}
       on:change={handleChange}
       disabled={fieldState.disabled}
       error={fieldState.error}
