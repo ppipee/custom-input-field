@@ -1,6 +1,7 @@
 <script>
-  import Field from './components/Field.svelte'
   import { CoreTextField } from '@budibase/bbui'
+
+  import Field from './components/Field.svelte'
   import mapValueType from './utils/mapValueType'
   import revertValueType from './utils/revertValueType'
 
