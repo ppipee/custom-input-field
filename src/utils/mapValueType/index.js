@@ -14,14 +14,18 @@ export default function mapValueType(value, type) {
       return Boolean(value)
     case 'json':
     case 'array':
-      const dataObject = isObject(value)
-        ? JSON.stringify({ data: value })
-        : value
-      const stringObject = isString(dataObject)
-        ? JSON.parse(dataObject)
-        : dataObject
+      try {
+        const dataObject = isObject(value)
+          ? JSON.stringify({ data: value })
+          : value
+        const stringObject = isString(dataObject)
+          ? JSON.parse(dataObject)
+          : dataObject
 
-      return stringObject
+        return stringObject
+      } catch {
+        return value
+      }
     case 'datetime':
       return new Date(value)
     default:
