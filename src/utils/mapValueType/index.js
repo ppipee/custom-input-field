@@ -6,7 +6,7 @@ export default function mapValueType(value, type) {
       return Boolean(value)
     case 'json':
     case 'array':
-      return JSON.parse(value)
+      return JSON.parse(JSON.stringify(value))
     case 'datetime':
       return new Date(value)
     default:

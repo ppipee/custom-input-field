@@ -3,7 +3,6 @@
 
   import Field from './components/Field.svelte'
   import mapValueType from './utils/mapValueType'
-  import revertValueType from './utils/revertValueType'
 
   export let label
   export let field
@@ -42,7 +41,7 @@
   {#if fieldState}
     <CoreTextField
       updateOnChange={false}
-      value={revertValueType(fieldState.value, type)}
+      value={fieldState.value}
       on:change={handleChange}
       disabled={fieldState.disabled}
       error={fieldState.error}
