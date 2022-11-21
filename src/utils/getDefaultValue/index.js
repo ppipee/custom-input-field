@@ -1,5 +1,5 @@
 import isEmpty from 'lodash/isEmpty'
-import mapValueType from '../revertValue'
+import mapValueType from '../mapValueType'
 
 export default function getDefaultValue(defaultValue, type) {
   if (!isEmpty(defaultValue)) {
