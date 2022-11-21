@@ -16,7 +16,7 @@ export default function mapValueType(value, type) {
     case 'array':
       const dataObject = isObject(value)
         ? JSON.stringify({ data: value })
-        : value
+        : value.replace(`'`, `"`)
       const stringObject = isString(dataObject)
         ? JSON.parse(dataObject)
         : dataObject

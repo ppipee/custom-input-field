@@ -6,12 +6,5 @@ export default function getDefaultValue(defaultValue, type) {
     return mapValueType(defaultValue, type)
   }
 
-  switch (type) {
-    case 'json':
-      return '{}'
-    case 'array':
-      return '[]'
-    default:
-      return ''
-  }
+  return ''
 }
