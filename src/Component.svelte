@@ -1,5 +1,5 @@
 <script>
-  import CoreTextField from '@budibase/bbui/src/Form/Core/TextField.svelte'
+  import { CoreTextField } from '@budibase/bbui'
 
   import Field from './components/Field.svelte'
   import mapValueType from './utils/mapValueType'
